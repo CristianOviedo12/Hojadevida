@@ -2,3 +2,13 @@
   max-width: 1280px;
 }
 
+.form-container {
+  background-color: rgb(80, 230, 160);
+}
+.form-box{
+  background-color: aqua;
+}
+
+.form-grid{
+  background-color: brown;
+}
