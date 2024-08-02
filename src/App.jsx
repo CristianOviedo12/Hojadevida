@@ -1,69 +1,30 @@
 import * as React from 'react';
-import { Box, Button, Container, Grid, TextField, Typography } from '@mui/material';
-
+import { BrowserRouter as Router, Route, Routes, Link as RouterLink } from 'react-router-dom';
+import Home from './pages/Home';
+import Registro from './pages/registro/Registro';
 const App = () => {
+
   return (
-    <Container
-      sx={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
-      <Box
-        sx={{
-          width: '30%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '16px',
-        }}
-      >
-        <Typography variant="h6" gutterBottom sx={{ marginBottom:'20px'}}>
-          Registro de usuario
-        </Typography>
-        <form
-          sx={{
-            width: '100%'
-          }}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                id="username"
-                name="username"
-                label="Nombre de usuario"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                id="email"
-                name="email"
-                label="Correo electrónico"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type="submit"
-                id="submit-btn"
-                variant="outlined"
-                fullWidth
-                sx={{color: 'black', borderColor:'black','&:hover':{color:'#1976d2',transition:'1s'}}}
-              >
-                Registrar
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
-      </Box>
-    </Container>
+    <>
+    <Router>
+      <div style={{background:'black',color:'white', height:'10vh'}}>
+        <nav>
+        <div><h3><RouterLink to='/'>Incio</RouterLink></h3></div>
+        <div>
+          <RouterLink to='/registro'>Registrese</RouterLink>
+          <RouterLink to='/sesion'>Iniciar Sesión</RouterLink>
+        </div>
+        </nav>
+      </div>
+      <div style={{ height:'80vh',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/registro' element={<Registro />} />
+        </Routes>
+      </div>
+      <div style={{background:'black',color:'white', height:'10vh'}}>Footer</div>
+    </Router>
+    </>
   );
 }
 
