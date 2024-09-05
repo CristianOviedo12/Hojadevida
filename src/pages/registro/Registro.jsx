@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Box, Button, Container, Grid, IconButton, InputAdornment, TextField, Typography } from '@mui/material';
+import { Box, Button, colors, Container, Grid, IconButton, InputAdornment, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import styles from './Registro.module.css'
 
 const Registro = () => {
   const [email, setEmail] = React.useState('');
@@ -32,7 +33,7 @@ const Registro = () => {
       setPassword('');
       setTimeout(() => {
         setSuccess('');
-        navigate('/success'); // Redirige a la página de éxito
+        navigate('/sesion'); // Redirige a la página de éxito
       }, 1250);
     } catch (error) {
       if (error.response && error.response.status === 400) {
@@ -58,31 +59,14 @@ const Registro = () => {
   };
 
   return (
-    <Container
-      sx={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
-      <Box
-        sx={{
-          width: '30%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '16px',
-        }}
-      >
-        <Typography variant="h6" gutterBottom sx={{ marginBottom: '20px' }}>
+    <Box className={styles.container} >
+      <Box className={styles.box}>
+        <Typography variant="h6" gutterBottom className={styles.typography} sx={{marginBottom:'25px'}}>
           Registro de usuario
         </Typography>
-        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12} >
               <TextField
                 fullWidth
                 id="email"
@@ -91,8 +75,29 @@ const Registro = () => {
                 variant="outlined"
                 value={email}
                 onChange={handleChangeEmail}
-                error={!!error}
-                helperText={error}
+                sx={{
+                  marginBottom:'5px',
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '& input': {
+                      color: 'white', 
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'rgba(255, 30, 0, 0.822)',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'rgba(255, 30, 0, 0.822)', 
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'white', 
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: 'rgba(255, 30, 0, 0.822)',
+                  },
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -113,10 +118,33 @@ const Registro = () => {
                         onClick={handleClickPassword}
                         edge="end"
                       >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                        {showPassword ? <VisibilityOff sx={{color:'white'}}/> : <Visibility sx={{color:'white'}}/>}
                       </IconButton>
                     </InputAdornment>
                   ),
+                }}
+                sx={{
+                  marginBottom:'5px',
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '& input': {
+                      color: 'white', 
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'rgba(255, 30, 0, 0.822)',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'rgba(255, 30, 0, 0.822)', 
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'white', 
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: 'rgba(255, 30, 0, 0.822)',
+                  },
                 }}
               />
             </Grid>
@@ -126,16 +154,27 @@ const Registro = () => {
                 id="submit-btn"
                 variant="outlined"
                 fullWidth
-                sx={{ color: 'black', borderColor: 'black', '&:hover': { color: '#1976d2', transition: '1s' } }}
-              >
-                Registrar
+                sx={{
+                  color: 'white', // Color inicial del texto
+                  borderColor: 'white', // Borde inicial blanco
+                  '&:hover': {
+                      borderColor: 'rgba(255, 30, 0, 0.822)', // Borde rojo al pasar el cursor
+                      color: 'rgba(255, 30, 0, 0.822)', // Texto rojo al pasar el cursor
+                      transition: '1s', // Transición suave
+                  },
+              }}
+                >
+                  Registrar
               </Button>
+              
             </Grid>
           </Grid>
         </form>
-        {success && <Typography sx={{ fontWeight: 'bold', marginTop: '15px' }}>{success}</Typography>}
+        {success && <Typography sx={{ fontWeight: 'bold', marginTop: '15px',color:'white' }} >{success}</Typography>}
+        {error && <Typography sx={{ fontWeight: 'bold', marginTop: '10px',color:'red', fontSize:'10px' }}  >    e{!!error}
+        {error}</Typography>}
       </Box>
-    </Container>
+    </Box>
   );
 };
 
