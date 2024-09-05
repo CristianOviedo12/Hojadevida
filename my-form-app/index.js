@@ -22,7 +22,7 @@ bd.connect((err) => {
   console.log('Conectado a la base de datos MySQL');
 });
 
-// Ruta para manejar el envío del formulario
+// Ruta para manejar el registro de usuarios
 app.post('/register', (req, res) => {
   const { email, password } = req.body;
 
@@ -47,6 +47,24 @@ app.post('/register', (req, res) => {
       }
       res.send('Usuario registrado con éxito');
     });
+  });
+});
+
+// Ruta para manejar el inicio de sesión
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const checkUser = "SELECT * FROM users WHERE email = ? AND password = ?";
+  bd.query(checkUser, [email, password], (err, result) => {
+    if (err) {
+      console.error('Error al verificar las credenciales:', err);
+      return res.status(500).send('Error en el servidor');
+    }
+    if (result.length > 0) {
+      res.send('Autenticación exitosa');
+    } else {
+      res.status(401).send('Credenciales incorrectas');
+    }
   });
 });
 
