@@ -39,6 +39,7 @@ const App = () => {
           <div style={{ background: 'black', color: 'white', height: '10vh', display: 'flex', alignItems: 'center' }}>
             <nav>
               <div>
+                <StyledRouterLink to='/'>Inicio</StyledRouterLink>
                 <StyledRouterLink to='/registro'>Registrese</StyledRouterLink>
                 <StyledRouterLink to='/sesion'>Iniciar Sesión</StyledRouterLink>
               </div>
