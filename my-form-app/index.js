@@ -4,17 +4,17 @@ const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 // Conectamos a la base de datos MySQL
 const bd = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'cfbok12!!',
-  database: 'mydatabase'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 bd.connect((err) => {
