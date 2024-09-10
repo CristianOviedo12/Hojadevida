@@ -3,7 +3,7 @@ const Home = () => {
     return(
         <>
       <div>
-        Pagina Principal :D
+        Ahora puedes iniciar sesion o resgistrarte 😃
       </div>
     </>
     )

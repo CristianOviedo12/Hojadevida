@@ -35,7 +35,7 @@ const Hojadevida = () => {
         // Eliminar el estado de autenticación de localStorage
         localStorage.removeItem('isAuthenticated');
         // Redirigir al usuario a la página principal o de inicio de sesión
-        navigate('/sesion');
+        navigate('/');
         window.location.reload(); // Forzar la carga de la página
     };
 
