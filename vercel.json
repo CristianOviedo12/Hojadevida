@@ -1,15 +1,16 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "my-form-app/index.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "my-form-app/index.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "my-form-app/index.js"
-        }
+      {
+        "src": "/api/(.*)",
+        "dest": "my-form-app/index.js"
+      }
     ]
-}
+  }
+  
