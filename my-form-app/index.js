@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -18,7 +19,10 @@ const bd = mysql.createConnection({
 });
 
 bd.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    console.error('Error al conectar a la base de datos:', err);
+    return;
+  }
   console.log('Conectado a la base de datos MySQL');
 });
 
