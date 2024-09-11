@@ -1,0 +1,98 @@
+.cajaMayor{
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.informacion{
+  width: 45%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+.navegacion{
+  width: 10%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+}
+.infotext{
+  width: 70%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.infotext h1{
+  color: rgba(255, 30, 0, 0.822);
+}
+.keyboard{
+  color: rgb(255, 255, 255);
+  background-color: rgb(7, 7, 7);
+  border-radius: 50%;
+}
+.keyboard:hover{
+  color: rgba(255, 30, 0, 0.822);
+  box-shadow: 0px 0px 5px 0px rgba(255, 30, 0, 0.822);
+}
+.contenidoimg{
+  width: 45%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .cajaMayor{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .informacion{
+    width: 90%;
+    height: 50vh;
+  }
+  .contenidoimg{
+    width: 90%;
+    height: 80vh;
+  }
+  .infotext{
+    width: 70%;
+    height: 50vh;
+    font-size: 13px;
+  }
+  .navegacion{
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .cajaMayor{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .informacion{
+    width: 90%;
+    height: 80vh;
+  }
+  .contenidoimg{
+    width: 90%;
+    height: 80vh;
+  }
+  .infotext{
+    width: 70%;
+    height: 80vh;
+    font-size: 13px;
+  }
+  .navegacion{
+    height: 80vh;
+  }
+}

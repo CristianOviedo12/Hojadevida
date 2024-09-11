@@ -1,6 +1,7 @@
 .cajaMayor {
-    min-height: 100vh;
-    background-color: black;
+    min-height: 80vh;
+    background-color: transparent;
+    width: 90%;
   }
 .menu{
     min-height: 10vh;
@@ -198,4 +199,48 @@
         width: 60%;
     }
     
+  }
+
+  @media (max-width: 480px) {
+    .cajaContenido {
+        display: block;
+        padding-top: 40px;
+      }
+    .cajaOne{
+        width: 100%;
+        min-height: 10vh;
+    }
+    .container{
+        width: 95%;
+        min-height: 10vh;
+    }
+    .sectioncontainer{
+        margin-bottom: 5px;
+        width: 60%;
+    }
+
+    .cajaTwo{
+        width: 100%;
+        height: 90vh;
+    }
+    .containertwo{
+        max-height: 80vh;
+        width: 30%;
+    }
+    .containertree{
+        width: 70%;
+        color: rgb(255, 255, 255);
+        height: auto;
+        
+    }
+    .info{
+        height: 80vh;
+        width: 100%;
+        padding: 0px;
+    }
+    .divssection{
+        width: 100%;
+        height: auto;
+
+    }
   }
