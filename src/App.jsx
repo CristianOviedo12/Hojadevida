@@ -55,7 +55,7 @@ const App = () => {
             </Routes>
           </div>
           <div style={{ background: 'black', color: 'white', height: '10vh', display: 'flex', alignItems: 'center' }}>
-            <p style={{ fontSize: '12px' }}>Cristian Mauricio Oviedo Pacheco4</p>
+            <p style={{ fontSize: '12px' }}>Cristian Mauricio Oviedo Pacheco</p>
           </div>
         </>
     </Router>
