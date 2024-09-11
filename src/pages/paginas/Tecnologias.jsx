@@ -4,7 +4,7 @@ import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
 import FolderIcon from '@mui/icons-material/Folder';
 import StyleIcon from '@mui/icons-material/Style';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
-import styles from './Habilidades.module.css';
+import styles from './Tecnologias.module.css';
 import Humano3D from './Humano3D';
 
 //  imágenes necesarias 0
@@ -101,7 +101,8 @@ const clickDatos = [
   }
 ]
 
-const Habilidades = ({ onBack }) => {
+const Tecnologias = () => {
+
   const [activeIndex, setActiveIndex] = React.useState(null);
   const [dataToShow, setDataToShow] = React.useState(initialData);
 
@@ -126,12 +127,6 @@ const Habilidades = ({ onBack }) => {
 
   return (
     <Box className={styles.cajaMayor}>
-
-      <Box className={styles.menu}>
-        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-          <Button className={styles.menubtn} sx={{ mr: 1, color:'white' }} startIcon={<NavigationIcon className={styles.menubtnicon}/>}  onClick={onBack}>Regresar</Button>
-        </Box>
-      </Box>
 
       <Box className={styles.cajaContenido}>
 
@@ -184,7 +179,7 @@ const Habilidades = ({ onBack }) => {
         
           <Box className={styles.cajaTwo}>
             <div className={styles.containertwo}>
-              <Humano3D />
+              <Humano3D></Humano3D>
             </div>
 
             <div className={styles.containertree}>
@@ -210,4 +205,4 @@ const Habilidades = ({ onBack }) => {
   );
 }
 
-export default Habilidades;
+export default Tecnologias;

@@ -2,9 +2,9 @@
 const Home = () => {
     return(
         <>
-      <div>
-        Ahora puedes iniciar sesion o resgistrarte 😃
-      </div>
+        <div style={{height:'80vh',display:'flex',justifyContent:'center',alignItems:'center'}}>
+          <p>Interactua un poco 😃</p>
+        </div>
     </>
     )
 }

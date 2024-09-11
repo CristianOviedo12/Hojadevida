@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import styles from './Primera.module.css';
+import styles from './Contacto.module.css';
 import { Avatar, Box, Button, Stack } from '@mui/material';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import image from '../../assets/CristianOviedoFoto.jpg';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-const Primera = ({ onBack }) => {
+
+const Contacto = () => {
   return (
     <Box className={styles.cajaMayor}>
-
-      <Box className={styles.menu}>
-        <Box sx={{ '& > :not(style)': { m: 1 } }}>
-          <Button className={styles.menubtn} sx={{ mr: 1, color:'white' }} startIcon={<NavigationIcon className={styles.menubtnicon}/>}  onClick={onBack}>Regresar</Button>
-        </Box>
-      </Box>
 
       <Box className={styles.infoContacto}>
 
@@ -106,4 +101,4 @@ const Primera = ({ onBack }) => {
   );
 }
 
-export default Primera;
+export default Contacto;
